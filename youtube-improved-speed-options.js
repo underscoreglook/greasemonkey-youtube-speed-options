@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Improved Speed Options
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Adds a slider next to the youtube title, below the video, from 0.25x to 3.75x and lets you save a default speed for the channel.
 // @author       _glook
 // @include     /^https?:\/\/(www.)?youtube\.com\/.*$/
@@ -87,6 +87,7 @@
 
         var channelName = getChannelName();
         if (!channelName) return;
+        if (channelName == currentChannel) return;
         currentChannel = channelName;
 
         var desiredSpeed = getChannelSpeed(channelName);
