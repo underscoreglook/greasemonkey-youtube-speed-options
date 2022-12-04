@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Improved Speed Options
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Adds a slider next to the youtube title, below the video, from 0.25x to 3.75x and lets you save a default speed for the channel.
 // @author       _glook
 // @include     /^https?:\/\/(www.)?youtube\.com\/.*$/
@@ -43,7 +43,7 @@
         $container.append($button);
         var $span = $('<span id="videoSpeedDisplay" style="color:white;">' + currentPlaybackRate.toFixed(2) + '</span>');
         $container.append($span);
-        var $slider = $('<input id="videoSpeedInput" type="range" min="0.25" max="3.75" step="0.25">');
+        var $slider = $('<input id="videoSpeedInput" type="range" min="1.00" max="5.00" step="0.25">');
         $slider.css('width', '200px');
         var sliderTicksCss = `linear-gradient(to right, #000,
 #000 3.5%, #888 3.5%, #888 4.5%, #000 4.5%,
@@ -69,7 +69,7 @@
             $span.text(parseFloat($slider.val()).toFixed(2));
         });
         $container.append($slider);
-        $('div#info.ytd-watch-flexy').prepend($container);
+        $('ytd-watch-metadata > #above-the-fold > #title > h1').append($container);
     }
 
     var currentChannel = null;
