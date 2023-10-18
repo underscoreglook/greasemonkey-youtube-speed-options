@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Improved Speed Options
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  Adds a slider next to the youtube title, below the video, from 0.25x to 3.75x and lets you save a default speed for the channel.
 // @author       _glook
 // @include     /^https?:\/\/(www.)?youtube\.com\/.*$/
