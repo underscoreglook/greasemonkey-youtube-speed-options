@@ -16,7 +16,7 @@
     'use strict';
 
     function getChannelName() {
-        var $channelName = $("#meta #meta-contents #container #top-row ytd-video-owner-renderer ytd-channel-name#channel-name #text-container #text a");
+        var $channelName = $("ytd-channel-name#channel-name #text-container #text a");
         if ($channelName.length == 0) return null;
         return $channelName.get(0).textContent;
     }
