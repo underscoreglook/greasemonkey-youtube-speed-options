@@ -75,9 +75,13 @@
     var currentChannel = null;
 
     var checkIfSpeedSliderExists = setInterval(function() {
+        if ($("#youtubeImprovedSpeedOptions").length)
+        {
+            clearInterval(checkIfSpeedSliderExists);
+            return;
+        }
         if ($("video").length && $('div#info.ytd-watch-flexy').length) {
             addSlider();
-            clearInterval(checkIfSpeedSliderExists);
             currentChannel = "fake channel name";
         }
     }, 1000);
